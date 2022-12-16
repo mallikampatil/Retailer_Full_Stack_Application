@@ -1,16 +1,17 @@
-const APILINK = 'https://api.redcircleapi.com/request?api_key=E18D50B218ED4CCA9005872A16A0E58F&search_term=highlighter+pens&category_id=5zja3&type=search';
-const IMG_PATH = "https://api.redcircleapi.com/request?api_key=E18D50B218ED4CCA9005872A16A0E58F&search_term=";
+const APILINK = "https://api.redcircleapi.com/request?api_key=E18D50B218ED4CCA9005872A16A0E58F&search_term=all+products&type=search&sort_by=best_seller";
+//const IMG_PATH = "https://api.redcircleapi.com/request?api_key=E18D50B218ED4CCA9005872A16A0E58F&search_term=all+products&type=search&sort_by=best_seller";
 const SEARCHAPI = "https://api.redcircleapi.com/request?api_key=E18D50B218ED4CCA9005872A16A0E58F&search_term=";
 
 const main = document.getElementById("section");
 const form = document.getElementById("form");
 const search = document.getElementById("retail-search");
 
-function returnItems(APILINK) {
+returnItems(APILINK)
+function returnItems(url) {
     fetch(url).then(res => res.json())
         .then(function (data) {
-            console.log(data.results);
-            data.results.forEach(element => {
+            console.log(data.search_results);
+            data.search_results.forEach(element => {
                 const div_card = document.createElement('div');
                 div_card.setAttribute('class', 'card'); 
 
@@ -24,22 +25,23 @@ function returnItems(APILINK) {
                 image.setAttribute('class', 'thumbnail'); 
 
                 const title = document.createElement('h3');
+                
 
                 const center = document.createElement('center');
 
-                title.innerHTML = `${element.title}`;
+                title.innerHTML = `${element.product.title}`;
                 // TODO: Update functionality with images
-                image.src = IMG_PATH + element.poster_path;
+                image.src = `${element.product.images[0]}`;
 
                 center.appendChild(image);
                 div_card.appendChild(center);
                 div_card.appendChild(title);
-                div_column.appenChild(card);
-
+                div_column.appendChild(div_card);
+                div_row.appendChild(div_column);
                 main.appendChild(div_row);
             });
         });
-}
+    }
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
