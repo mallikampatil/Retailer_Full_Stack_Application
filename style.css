@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    box-sizing: border-box;
+    background-color:  #680000;
+    font-family: sans-serif;
+    margin: 0px;
+}
+
+h3 {
+    color: white; 
+}
+
+.top-navigation {
+    box-sizing: border-box;
+    overflow:auto;
+    background-color: #CC0000;
+    padding: 10px; 
+    padding: 14px 16px; 
+    position: relative;
+    filter: drop-shadow(0 0 0.75rem crimson);
+}
+::placeholder {
+    color: black;
+}
+
+.top-navigation .search-container {
+    top: 25%;
+    position: absolute;
+    right: 25px;
+}
+
+form {
+    background-color: #ffffff;
+    width: 300px; 
+    height: 50px; 
+    border-radius: 19px; 
+    display: flex; 
+    align-items: center;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+input {
+    all: unset; 
+    font: 15px system-ui; 
+    color: #000; 
+    height: 100%; 
+    width: 100%; 
+    padding: 6px 9px; 
+}
+
+.thumbnail {
+    height: 300px;
+    width: 300px; 
+    border-radius: 27px;
+    flex-grow: 1;
+}
+
+.column {
+    float: left;
+    width: 25%; 
+    padding: 10px 10px;
+}
+
+.card {
+    border-radius: 27px;
+    padding: 20px; 
+    background-color: #aa0000;
+    width:350px; 
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    bottom:40%;
+    position: absolute;
+    margin-left: 20px;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.top-nav-logo {
+    max-width: 75px;
+    max-height: 75px;
+}
