@@ -25,17 +25,23 @@ function returnItems(url) {
                 image.setAttribute('class', 'thumbnail'); 
 
                 const title = document.createElement('h3');
-                
+                const price = document.createElement('h5');
 
                 const center = document.createElement('center');
 
-                title.innerHTML = `${element.product.title}`;
+                if(`${element.product.title.length}` > 75) {
+                    title.innerHTML = `${element.product.title.substring(0, 65)}` + "...";
+                } else {
+                    title.innerHTML = `${element.product.title}`;
+                }
+                price.innerHTML = `${element.offers.primary.price}`;
                 // TODO: Update functionality with images
                 image.src = `${element.product.images[0]}`;
 
                 center.appendChild(image);
                 div_card.appendChild(center);
                 div_card.appendChild(title);
+                div_card.appendChild(price);
                 div_column.appendChild(div_card);
                 div_row.appendChild(div_column);
                 main.appendChild(div_row);
