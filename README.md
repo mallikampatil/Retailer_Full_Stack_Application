@@ -2,4 +2,4 @@
 **Description:** Full stack application created using HTML, CSS, JavaScript for Front End and a NodeJS and MongoDB backend. 
 
 ## Current State Demo
-![](https://youtube.com/shorts/k7krRnrJd4g)
+[![Full Stack App Demo](https://youtu.be/T0VkrK9VGPg)
